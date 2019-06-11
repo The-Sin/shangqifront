@@ -1,0 +1,47 @@
+<!-- <h2 *ngIf="user">
+  user: {{user.username}}
+</h2> -->
+<!-- <div *ngFor="let role of roles; let i = index" >
+  <label>{{role.name}} <input type="checkbox" [(ngModel)]="role.checked">    </label>
+</div> -->
+
+<div class="row">
+  <div class="col-lg-12">
+      <div class="card bg-light">
+          <div class="card-body">
+              <div *ngIf="user" class="d-flex no-block align-items-center m-b-10">
+                  
+                  <h4 class="card-title"> {{user.username}}</h4>
+              </div>
+              <div class="table-responsive">
+                  <table class="table bg-white table-bordered nowrap display">
+                      <thead>
+                          <tr>
+                              <th> </th>
+                              <th>Permission</th>
+                              
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let role of roles; let i = index" >
+                              <td>
+                                  <div class="custom-control custom-checkbox">
+                                      <input type="checkbox" class="custom-control-input" id="{{i}}" [(ngModel)]="role.checked" required>
+                                      <label class="custom-control-label" for="{{i}}"></label>
+                                  </div>
+                              </td>
+                              <td>
+                                {{role.name}}
+                              </td>
+                             
+                          </tr>
+                          
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<a (click)="update()" class="btn  btn-success btn-rounded">Save</a>

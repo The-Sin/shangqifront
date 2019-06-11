@@ -1,0 +1,43 @@
+
+<div class="card">
+ 
+  <div class="table-responsive">
+      <table class="table v-middle">
+          <thead>
+              <tr class="bg-light">
+                  <th class="border-top-0">用户名</th>
+                  <th class="border-top-0">管理员权限</th>
+                  <th class="border-top-0">权限1</th>
+                  <th class="border-top-0">权限2</th>
+                  <th class="border-top-0">权限3</th>                  
+                  <th class="border-top-0">编辑</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr  *ngFor="let item of allUsers; let i = index"  >
+                    <td>
+                            <div class="d-flex align-items-center">
+                                <!-- <div class="m-r-10">
+                                    <a class="btn btn-circle btn-info text-white">EA</a>
+                                </div> -->
+                                <div class="">
+                                    <h4 class="m-b-0 font-16">{{item.username}}</h4>
+                                </div>
+                            </div>
+                        </td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                     
+                        <td><i class="fas fa-check"></i></td>
+                        <td><i class="fas fa-check"></i></td>
+                        <td>
+                            
+                                <a routerLink="/user/settings/{{item.username}}" routerLinkActive="active" class="btn btn-sm btn-success btn-rounded" > 编辑 </a>
+                        </td>
+                       
+              </tr>
+         
+          </tbody>
+      </table>
+  </div>
+</div>
